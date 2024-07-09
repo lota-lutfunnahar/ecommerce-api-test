@@ -1,12 +1,16 @@
 <configuration>
     <include resource="org/springframework/boot/logging/logback/base.xml" />
 
-    <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-        <destination>localhost:5044</destination>
+    <appender name="GELF" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>localhost:12201</destination>
         <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
     </appender>
 
-    <root level="INFO">
-        <appender-ref ref="LOGSTASH" />
+    <root level="info">
+        <appender-ref ref="GELF" />
     </root>
+
+    <logger name="com.example.ecommerceapi.controller" level="debug">
+        <appender-ref ref="GELF" />
+    </logger>
 </configuration>

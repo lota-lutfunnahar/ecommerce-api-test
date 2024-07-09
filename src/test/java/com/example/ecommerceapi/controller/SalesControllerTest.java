@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -73,6 +74,7 @@ public class SalesControllerTest {
         Mockito.when(salesService.getTop5SellingItemsLastMonth()).thenReturn(top5ItemsLastMonth);
 
         mockMvc.perform(get("/api/sales/top5/last-month"))
-                .andExpect(status().isOk());
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.size()").value(5));
     }
 }

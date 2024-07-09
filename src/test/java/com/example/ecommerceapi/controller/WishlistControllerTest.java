@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.util.Arrays;
 import java.util.List;
@@ -23,7 +24,6 @@ public class WishlistControllerTest {
 
     @MockBean
     private WishlistService wishlistService;
-
     @Test
     public void testGetWishlist() throws Exception {
         List<Item> wishlist = Arrays.asList(
@@ -35,6 +35,10 @@ public class WishlistControllerTest {
         Mockito.when(wishlistService.getWishlist(1L)).thenReturn(wishlist);
 
         mockMvc.perform(get("/api/wishlist/1"))
-                .andExpect(status().isOk());
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.size()").value(3))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].name").value("Item A"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].name").value("Item B"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[2].name").value("Item C"));
     }
 }

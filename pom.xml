@@ -68,6 +68,12 @@
 			<artifactId>logstash-logback-encoder</artifactId>
 			<version>6.6</version>
 		</dependency>
+
+		<dependency>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+			<version>7.0</version>
+		</dependency>
 		<dependency>
 			<artifactId>commons-logging</artifactId>
 			<groupId>commons-logging</groupId>
@@ -92,8 +98,6 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- add log4j binding to classpath -->
-		<!-- routes slf4j calls to log4j -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
