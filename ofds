@@ -1,1 +1,21 @@
 e3c652f0ba0b4801205814f8b6bc49672c4c74e25b497770bb89b22cdeb4e951  -
+
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+    <appender name="graylog" class="org.graylog2.log.GelfAppender">
+        <param name="graylogHost" value="0.0.0.0"/>
+        <param name="originHost" value="localhost"/>
+        <param name="graylogPort" value="12201"/>
+        <param name="extractStacktrace" value="true"/>
+        <param name="addExtendedInformation" value="true"/>
+        <param name="facility" value="log4j"/>
+        <param name="Threshold" value="INFO"/>
+        <param name="additionalFields" value="{'environment': 'DEV', 'application': 'EcommerceApiApplication'}"/>
+    </appender>
+
+    <loggers>
+        <Root level="info">
+            <AppenderRef ref="Graylog"/>
+        </Root>
+    </loggers>
+</configuration>

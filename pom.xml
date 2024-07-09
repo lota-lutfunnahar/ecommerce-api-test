@@ -80,6 +80,7 @@
 			<artifactId>logstash-logback-encoder</artifactId>
 			<version>7.0</version>
 		</dependency>
+
 		<dependency>
 			<artifactId>commons-logging</artifactId>
 			<groupId>commons-logging</groupId>
@@ -93,11 +94,17 @@
 <!--			<version>${logback.version}</version>-->
 <!--		</dependency>-->
 
-<!--		<dependency>-->
-<!--			<groupId>org.graylog2</groupId>-->
-<!--			<artifactId>gelfj</artifactId>-->
-<!--			<version>1.1.16</version>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>de.siegmar</groupId>
+			<artifactId>logback-gelf</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.graylog2</groupId>
+			<artifactId>gelfj</artifactId>
+			<version>1.1.16</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
