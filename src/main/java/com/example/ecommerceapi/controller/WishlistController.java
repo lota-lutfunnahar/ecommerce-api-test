@@ -11,15 +11,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
+
 
 
 @RestController
 @RequestMapping("/api")
+@Slf4j
 public class WishlistController {
-
-    private static final Logger logger = LoggerFactory.getLogger(WishlistController.class);
 
 
     @Autowired
@@ -27,12 +26,12 @@ public class WishlistController {
 
     @GetMapping("/wishlist/{customerId}")
     public ResponseEntity<Map<String, Object>> getWishlist(@PathVariable Long customerId) {
-        logger.info("Received request to get wishlist for customer with ID: {}", customerId);
+        log.info("Received request to get wishlist for customer with ID: {}", customerId);
         List<Item> wishlist = wishlistService.getWishlist(customerId);
         Map<String, Object> response = new HashMap<>();
         response.put("data", wishlist);
 
-        logger.info("Returning wishlist for customer with ID: {}", customerId);
+        log.info("Returning wishlist for customer with ID: {}", customerId);
         return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 
     }
