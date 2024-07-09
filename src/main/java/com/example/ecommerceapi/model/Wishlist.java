@@ -5,7 +5,8 @@ import jakarta.persistence.*;
 @Entity
 @IdClass(WishlistId.class)
 public class Wishlist {
-    @Id
+
+    @Id()
     private Long customerId;
 
     @Id

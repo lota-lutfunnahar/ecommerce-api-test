@@ -1,16 +1,16 @@
-INSERT INTO customers (name, email) VALUES
+INSERT INTO customer (name, email) VALUES
 ('Sam doe', 'sam.doe@example.com'),
 ('Jane Smith', 'jane.smith@example.com'),
 ('Alice Johnson', 'alice.johnson@example.com');
 
-INSERT INTO items (name, price) VALUES
+INSERT INTO item (name, price) VALUES
 ('Item A', 10.00),
 ('Item B', 20.00),
 ('Item C', 30.00),
 ('Item D', 40.00),
 ('Item E', 50.00);
 
-INSERT INTO wishlists (customer_id, item_id) VALUES
+INSERT INTO wishlist (customer_id, item_id) VALUES
 (1, 1),
 (1, 2),
 (1, 3),
@@ -20,7 +20,7 @@ INSERT INTO wishlists (customer_id, item_id) VALUES
 (3, 4),
 (3, 5);
 
-INSERT INTO sales (item_id, quantity, sale_date) VALUES
+INSERT INTO sale (item_id, quantity, sale_date) VALUES
 (1, 5, '2024-07-01'),
 (2, 3, '2024-07-01'),
 (3, 7, '2024-07-01'),
