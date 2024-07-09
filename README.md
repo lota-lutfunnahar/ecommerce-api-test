@@ -28,3 +28,48 @@ This is a Spring Boot-based RESTful API for an e-commerce application. The API p
 - Install JDK 21 or JDK 17
 - Install Docker
 - Install PostgreSQL
+
+### Prerequisites
+
+Ensure your PostgreSQL server is running and create a database for the project:
+```
+CREATE DATABASE postgres;
+```
+### Set up application properties:
+
+Edit src/main/resources/application.properties and configure the database connection:
+```
+spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
+spring.datasource.username=yourusername
+spring.datasource.password=yourpassword
+spring.jpa.hibernate.ddl-auto=none
+
+spring.flyway.enabled=true
+spring.flyway.baseline-on-migrate=true
+spring.flyway.locations=classpath:db/migration
+
+```
+## Architecture
+### Microservices
+Each API endpoint is managed by a separate microservice, allowing for independent deployment and scaling.
+
+### API Gateway
+Spring Cloud Gateway: Manages API requests, routing, and authentication.
+### Database
+PostgreSQL: For structured data and ACID compliance.
+MongoDB: For flexibility with unstructured or semi-structured data.
+
+### Containerization
+Docker 
+
+### Graylog: For centralized log management.
+Prometheus & Grafana: For monitoring application performance and health metrics.
+
+
+### API
+RESTFull API
+
+### Testing
+JUnit: For unit tests.
+Mockito: For mocking dependencies in tests.
+Postman: For API testing.
