@@ -49,6 +49,13 @@ spring.flyway.baseline-on-migrate=true
 spring.flyway.locations=classpath:db/migration
 
 ```
+### Running the Application
+```
+mvn spring-boot:run
+
+```
+
+
 ## Architecture
 ### Microservices
 Each API endpoint is managed by a separate microservice, allowing for independent deployment and scaling.
