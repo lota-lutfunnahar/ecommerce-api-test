@@ -63,7 +63,7 @@ Each API endpoint is managed by a separate microservice, allowing for independen
 ### API Gateway
 Spring Cloud Gateway: Manages API requests, routing, and authentication.
 ### Database
-PostgreSQL: For structured data and ACID compliance.
+PostgreSQL: For structured data
 MongoDB: For flexibility with unstructured or semi-structured data.
 
 ### Containerization
@@ -80,3 +80,56 @@ RESTFull API
 JUnit: For unit tests.
 Mockito: For mocking dependencies in tests.
 Postman: For API testing.
+
+## API Endpoints
+
+### Wishlist API
+#### GET /api/wishlist/{customerId}
+- Returns the wish list of a customer.
+- Example: GET /api/wishlist/1
+  
+### Sales API
+#### GET /api/sales/today
+
+- Returns the total sales amount for the current day.
+- Example: GET /api/sales/today
+
+#### GET /api/sales/max
+
+- Returns the day with the maximum sales within a specific date range.
+- Parameters: startDate, endDate
+- Example: GET /api/sales/max?startDate=2024-01-01&endDate=2024-07-31
+
+#### GET /api/sales/top5/all-time
+
+- Returns the top 5 selling items of all time based on total sales amount.
+- Example: GET /api/sales/top5/all-time
+
+#### GET /api/sales/top5/last-month
+
+- Returns the top 5 selling items of the last month based on the number of sales.
+- Example: GET /api/sales/top5/last-month
+
+## Log management running from docker image
+
+### Set Password Secret and Root Password
+
+Replace somepasswordpepper with a random string for GRAYLOG_PASSWORD_SECRET. Replace <your_sha2_password> with the SHA-256 hash.
+
+
+### Run Docker compose for Graylog
+```
+docker-compose up
+```
+## Docker Image for Application
+
+### Docker Image build
+
+```
+docker build -t ecommerce-api-test .
+```
+
+### Docker Image Run
+```
+docker run -p 8080:8080 ecommerce-api-test
+```
