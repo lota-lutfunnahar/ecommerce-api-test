@@ -2,6 +2,7 @@ package com.example.ecommerceapi.repository;
 
 import com.example.ecommerceapi.model.Item;
 import com.example.ecommerceapi.model.Sale;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

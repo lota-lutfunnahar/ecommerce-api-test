@@ -31,7 +31,7 @@ public class WishlistController {
         Map<String, Object> response = new HashMap<>();
         response.put("data", wishlist);
 
-        log.info("Returning wishlist for customer with ID: {}", customerId);
+        log.info("Returning wishlist for customer with response: {}", response);
         return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 
     }
