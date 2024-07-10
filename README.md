@@ -16,16 +16,17 @@ This is a Spring Boot-based RESTful API for an e-commerce application. The API p
 ## Requirements
 
 - **Java Development Kit (JDK):** 21 or 17
-- **Spring Boot:** 3.2.2
-- **Docker:** Latest version
-- **Database:** PostgreSQL (or any open-source database of your choice)
-- **IDE:** Any (IntelliJ IDEA, Eclipse, VSCode, etc.)
+- **Spring Boot:** 3.3.2
+- **Docker:** 24.0.7
+- **Database:** PostgreSQL 14
+- **IDE:** IntelliJ IDEA
+- **Maven** Project
 
 ## Getting Started
 
 ### Prerequisites
 
-- Install JDK 21 or JDK 17
+- Install JDK 17
 - Install Docker
 - Install PostgreSQL
 
@@ -74,7 +75,7 @@ Prometheus & Grafana: For monitoring application performance and health metrics.
 
 
 ### API
-RESTFull API
+RESTfull API
 
 ### Testing
 JUnit: For unit tests.
